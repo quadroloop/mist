@@ -1,0 +1,43 @@
+
+body{
+  background: #000;
+  color: #fff;
+}
+
+.fxed-top{
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+  backdrop-filter: saturate(180%) blur(5px);
+  width: 100%;
+
+ .nav-group{
+
+   .search{
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+    border: 2px solid #000;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 20px;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+
+    &:focus{
+      border: 2px solid rgb(55, 212, 218);
+    }
+
+  }
+ }
+}
+
+.App{
+}
