@@ -50,4 +50,32 @@ body{
   border: 0.5px solid #333;
   border-radius: 5px;
   padding: 10px 20px;
+
+  P{
+    color: rgb(119, 114, 114);
+  }
+
+  small{
+    color: rgb(55, 212, 218);
+  }
 }
+
+.file-list-wrapper{
+  display: flex;
+  flex-direction: column;
+
+  .file-item{
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+
+    padding: 10px;
+    border-bottom: 0.5px solid #333;
+  }
+}
+
