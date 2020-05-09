@@ -41,53 +41,10 @@ function App() {
             <span>file.js</span>
             <span>3 MB</span>
             <span>april 20, 2020</span>
-          </div>
-
-          <div className="file-item"
-          >
-            <img src="https://picsum.photos/200/300" alt="asset-avatar" />
-            <span>file.js</span>
-            <span>3 MB</span>
-            <span>april 20, 2020</span>
-          </div>
-
-          <div className="file-item"
-          >
-            <img src="https://picsum.photos/200/300" alt="asset-avatar" />
-            <span>file.js</span>
-            <span>3 MB</span>
-            <span>april 20, 2020</span>
-          </div>
-
-          <div className="file-item"
-          >
-            <img src="https://picsum.photos/200/300" alt="asset-avatar" />
-            <span>file.js</span>
-            <span>3 MB</span>
-            <span>april 20, 2020</span>
-          </div>
-
-          <div className="file-item"
-          >
-            <img src="https://picsum.photos/200/300" alt="asset-avatar" />
-            <span>file.js</span>
-            <span>3 MB</span>
-            <span>april 20, 2020</span>
-          </div>
-
-          <div className="file-item"
-          >
-            <img src="https://picsum.photos/200/300" alt="asset-avatar" />
-            <span>file.js</span>
-            <span>3 MB</span>
-            <span>april 20, 2020</span>
-          </div>
-          <div className="file-item"
-          >
-            <img src="https://picsum.photos/200/300" alt="asset-avatar" />
-            <span>file.js</span>
-            <span>3 MB</span>
-            <span>april 20, 2020</span>
+            <button className="btn btn-dark btn-sm px-3">
+              <i className="la la-copy mr-2" />
+              Copy Link
+            </button>
           </div>
 
 
