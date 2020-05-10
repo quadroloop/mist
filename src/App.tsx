@@ -74,7 +74,7 @@ function App() {
                     <i className="la la-file mr-2" />
                     {file.name}
                   </span>
-                  <span>{getNodeSize(data)}</span>
+                  <span>{filesize(file.size)}</span>
                   <span>{moment(file.modified).format('MMMM D, YYYY')}</span>
 
                   <a href={`${window.location.href}/mist/${file.name}`} target="_blank" rel="noopener noreferrer">
