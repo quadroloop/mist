@@ -8,11 +8,14 @@ import filesize from 'filesize'
 function App() {
 
   const [data, setData] = useState(null)
+  const [files, setFiles] = useState([])
+
 
   useEffect(() => {
     axios.get('./mist.map.json')
       .then(res => {
         setData(res.data.mist)
+        setFiles(res.data.mist)
       })
 
   })
@@ -29,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <div className="fixed-top" >
-        <Header />
+        <Header data={data} />
       </div>
 
       {data && (
