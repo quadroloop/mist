@@ -3,6 +3,7 @@ import Fuse from 'fuse.js'
 import filesize from 'filesize'
 import moment from 'moment'
 
+
 const Header = (props) => {
 
   const searchList = (x) => {
@@ -31,7 +32,9 @@ const Header = (props) => {
       let delta = props.data.map(item => {
         return {
           "name": item.name,
-          "size": filesize(item.size),
+          "x-size": filesize(item.size),
+          "size": item.size,
+          "modifiled": item.modified,
           "date": moment(item.modified).format('MMMM D, YYYY'),
           "match": "--all"
         }
