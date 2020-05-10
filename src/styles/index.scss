@@ -75,6 +75,8 @@ body{
       width: $img;
       height: $img;
       object-fit: cover;
+      margin-right: 20px;
+      border-radius: $img;
     }
 
     padding: 10px;

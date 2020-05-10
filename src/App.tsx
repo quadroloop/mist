@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/index.scss'
 import Header from './components/Header';
+import axios from 'axios'
+import moment from 'moment'
 
 function App() {
+
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    axios.get('./mist.map.json')
+      .then(res => {
+        setData(res.data.mist)
+      })
+  })
+
+  const getNodeSize = (list) => {
+    let size = 0;
+    list.forEach(item => {
+      size += item.size;
+    })
+    return size;
+  }
+
+
   return (
     <div className="App">
       <div className="fixed-top" >
@@ -14,13 +35,13 @@ function App() {
           <div className="col-md-4">
             <div className="mist-card">
               <p>Files</p>
-              <h3>32</h3>
+              <h3>{data.length}</h3>
             </div>
           </div>
           <div className="col-md-4">
             <div className="mist-card">
               <p>Node Size</p>
-              <h3>4 <small>MB</small></h3>
+              <h3>{getNodeSize(data)} <small>MB</small></h3>
             </div>
           </div>
           <div className="col-md-4">
@@ -35,17 +56,27 @@ function App() {
         <hr />
         <div className="file-list-wrapper">
 
-          <div className="file-item"
-          >
-            <img src="https://picsum.photos/200/300" alt="asset-avatar" />
-            <span>file.js</span>
-            <span>3 MB</span>
-            <span>april 20, 2020</span>
-            <button className="btn btn-dark btn-sm px-3">
-              <i className="la la-copy mr-2" />
-              Copy Link
-            </button>
-          </div>
+          {data.reverse().map((file, index) => {
+            return (
+              <div
+                className="file-item"
+                key={index}
+              >
+                <span>
+                  <img src="https://picsum.photos/200/300" alt="asset-avatar" />
+                  {file.name}
+                </span>
+                <span>{file.size}</span>
+                <span>{moment(file.modified).format('MMMM D, YYYY')}</span>
+                <button className="btn btn-dark btn-sm px-3 py-2">
+                  <i className="la la-copy mr-2" />
+                  Copy Link
+              </button>
+              </div>
+            )
+          })}
+
+
 
 
         </div>
