@@ -54,7 +54,6 @@ function App() {
                 <h3>{"-"}</h3>
               </div>
             </div> */}
-
           </div>
           <hr />
           <p><i className="la la-list mr-1" /> List of assets</p>
