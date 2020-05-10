@@ -18,7 +18,7 @@ function App() {
         setFiles(res.data.mist)
       })
 
-  })
+  }, [])
 
   const getNodeSize = (list) => {
     let size = 0;
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <div className="fixed-top" >
-        <Header data={data} />
+        <Header data={data} setFiles={setFiles} />
       </div>
 
       {data && (
@@ -63,7 +63,7 @@ function App() {
           <hr />
           <div className="file-list-wrapper">
 
-            {data.reverse().map((file, index) => {
+            {files.length !== 0 && files.reverse().map((file, index) => {
               return (
                 <div
                   className="file-item"

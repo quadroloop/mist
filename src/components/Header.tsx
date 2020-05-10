@@ -23,7 +23,8 @@ const Header = (props) => {
         keys: [
           "name",
           "size",
-          "data"
+          "data",
+          "match"
         ]
       };
 
@@ -31,15 +32,17 @@ const Header = (props) => {
         return {
           "name": item.name,
           "size": filesize(item.size),
-          "date": moment(item.modified).format('MMMM D, YYYY')
-
+          "date": moment(item.modified).format('MMMM D, YYYY'),
+          "match": "--all"
         }
       })
 
       const fuse = new Fuse(delta, options);
-      let results = fuse.search(query)
+      let results = fuse.search(query).map(x => x.item);
 
-      console.log(results)
+      props.setFiles(results)
+
+
     }
   }
 
