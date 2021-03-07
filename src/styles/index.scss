@@ -1,16 +1,15 @@
-
-body{
+body {
   background: #000;
   color: #fff;
 }
 
-.fxed-top{
+.fxed-top {
   position: fixed;
   z-index: 10;
   top: 0px;
 }
 
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
@@ -18,69 +17,108 @@ body{
   backdrop-filter: saturate(180%) blur(5px);
   width: 100%;
 
- .nav-group{
+  .nav-group {
+    .search {
+      padding: 10px 30px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #000;
+      width: 100%;
+      width: 350px;
+      border-radius: 50px;
+      color: #fff;
+      outline: none;
+      transition: 0.3s;
 
-   .search{
-    padding: 10px 30px;
-    background: rgba(0,0,0,0.5);
-    border: 2px solid #000;
-    width: 100%;
-    width: 350px;
-    border-radius: 50px;
-    color: #fff;
-    outline: none;
-    transition: 0.3s;
-
-    &:focus{
-      border: 2px solid rgb(55, 212, 218);
+      &:focus {
+        border: 2px solid rgb(55, 212, 218);
+      }
     }
-
   }
- }
 }
 
-.App{
+.content-body {
+  padding: 100px 30px;
 }
 
-.content-body{
-  padding: 100px 150px;
-}
-
-.mist-card{
+.mist-card {
   border: 0.5px solid #333;
   border-radius: 5px;
   padding: 10px 20px;
 
-  P{
+  P {
     color: rgb(119, 114, 114);
   }
 
-  small{
+  small {
     color: rgb(55, 212, 218);
   }
 }
 
-.file-list-wrapper{
-  display: flex;
-  flex-direction: column;
+.file-list-wrapper {
+  // display: grid;
 
-  .file-item{
+  // flex-direction: column;
+  .file-item {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    width: 250px;
+    float: left;
+    margin: 0px 10px 10px;
+    color: #fff;
+    transition: 0.3s;
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     img {
+      $img: 150px;
 
-      $img: 30px;
-
-      width: $img;
+      width: 100%;
       height: $img;
       object-fit: cover;
       margin-right: 20px;
-      border-radius: $img;
+      // border-radius: $img;
     }
 
     padding: 10px;
     border-bottom: 0.5px solid #333;
+
+    &:hover {
+      background: rgba(100, 237, 237, 0.212);
+      transition: 0.3s;
+    }
   }
 }
+.fade-in-bottom {
+  -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
 
+@-webkit-keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
